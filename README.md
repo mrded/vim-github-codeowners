@@ -25,3 +25,8 @@ endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
 ```
+
+## TODO
+
+- [ ] Automaticaly install npm dependency
+- [ ] Do nothing if there is no codeowners file
