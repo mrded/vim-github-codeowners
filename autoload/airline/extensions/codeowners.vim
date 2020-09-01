@@ -12,7 +12,8 @@ function! airline#extensions#codeowners#init(ext)
 endfunction
 
 function! airline#extensions#codeowners#who()
-  let s:cmd = "github-codeowners who " . bufname() . " | awk '{ print $2 }'"
+  " @TODO: locad from ../../../node_modules/.bin/github-codeowners
+  let s:output = system("github-codeowners who " . bufname())
 
-  return system(s:cmd) 
+  return split(s:output)[-1]
 endfunction
