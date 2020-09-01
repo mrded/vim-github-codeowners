@@ -1,6 +1,9 @@
 # vim-airline-codeowners
 Shows codeowners in vim-airline
 
+![vim airline codeowners screenshot](https://user-images.githubusercontent.com/347098/91915409-63262700-ecb2-11ea-8502-52f820e22c75.png)
+
+
 ## Requirements
 
 - [vim-airline](https://github.com/bling/vim-airline)
