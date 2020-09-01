@@ -16,10 +16,16 @@ endfunction
 function! airline#extensions#codeowners#who()
   let l:file = bufname()
 
+  " If codeowners file doesn't exist - ignore.
+  if !filereadable(fnamemodify('.github/CODEOWNERS', ':p'))
+    let s:codeowners_cache[l:file] = "Unloved"
+  endif
+
+  " Populate cache if miss.
   if !has_key(s:codeowners_cache, l:file)
     " @TODO: locad from ../../../node_modules/.bin/github-codeowners
     let l:output = system("github-codeowners who " . l:file)
-    let s:codeowners_cache[l:file] = split(l:output)[-1]
+    let s:codeowners_cache[l:file] = get(split(l:output), 1, "Unloved") 
   endif
 
   return s:codeowners_cache[l:file]
