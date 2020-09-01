@@ -1,0 +1,25 @@
+{
+  "name": "vim-airline-codeowners",
+  "version": "1.0.0",
+  "description": "Shows codeowners in vim-airline",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrded/vim-airline-codeowners.git"
+  },
+  "keywords": [
+    "vim",
+    "codeowners",
+    "github",
+    "airline"
+  ],
+  "author": "Dmitry Demenchuk @mrded",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/mrded/vim-airline-codeowners/issues"
+  },
+  "homepage": "https://github.com/mrded/vim-airline-codeowners#readme",
+  "dependencies": {
+    "github-codeowners": "^0.2.1"
+  }
+}
