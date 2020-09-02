@@ -30,3 +30,4 @@ autocmd User AirlineAfterInit call AirlineInit()
 ## TODO
 
 - [ ] Automaticaly install npm dependency
+- [ ] Add commands
