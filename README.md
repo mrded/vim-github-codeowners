@@ -13,6 +13,11 @@ A vim plugin for interacting with [GitHub's CODEOWNERS](https://github.blog/2017
 [pathogen](https://github.com/tpope/vim-pathogen)
 or your favourite vim plugin manager.
 
+## Commands
+
+- `CodeownersWho` - shows a codeowner of active file.
+- `CodeownersReset` - resets cache.
+
 ## Airline Configuration
 
 ![vim airline codeowners screenshot](https://user-images.githubusercontent.com/347098/91915409-63262700-ecb2-11ea-8502-52f820e22c75.png)
