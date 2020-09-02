@@ -1,5 +1,5 @@
 # vim-github-codeowners
-A vim plugin for interacting with GitHub's CODEOWNERS file.
+A vim plugin for interacting with [GitHub's CODEOWNERS](https://github.blog/2017-07-06-introducing-code-owners/) file.
 
 ## Requirements
 
@@ -30,4 +30,5 @@ autocmd User AirlineAfterInit call AirlineInit()
 ## TODO
 
 - [ ] Automaticaly install npm dependency
+- [ ] Do not use NPM dependency (?)
 - [ ] Add commands
