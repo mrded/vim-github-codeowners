@@ -6,12 +6,15 @@ A vim plugin for interacting with [GitHub's CODEOWNERS](https://github.blog/2017
 - [github-codeowners](https://github.com/jjmschofield/github-codeowners)
 
 ## Installation
-- Install github-codeowners: `npm i -g github-codeowners`
-- Install `vim-github-codeowners` as any other plugin through the use of
+Install `vim-github-codeowners` as any other plugin through the use of
 [vim-plug](https://github.com/junegunn/vim-plug),
 [Vundle](https://github.com/VundleVim/Vundle.vim),
 [pathogen](https://github.com/tpope/vim-pathogen)
 or your favourite vim plugin manager.
+
+```
+Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
+```
 
 ## Commands
 
@@ -31,9 +34,3 @@ endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
 ```
-
-## TODO
-
-- [ ] Automaticaly install npm dependency
-- [ ] Do not use NPM dependency (?)
-- [ ] Add commands

@@ -6,17 +6,21 @@ function! codeowners#reset()
   let s:cache = {}
 endfunction
 
-function! codeowners#who(file)
-  " If codeowners file doesn't exist - ignore.
-  if !filereadable(fnamemodify('.github/CODEOWNERS', ':p'))
-    let s:cache[a:file] = "Unloved"
-  endif
+function! codeowners#isCodeownersFileExist()
+  let s:projectDir = split(system('git rev-parse --show-toplevel'))[0]
 
-  " Populate cache if miss.
+  return filereadable(s:projectDir . '/.github/CODEOWNERS')
+endfunction
+
+function! codeowners#who(file)
   if !has_key(s:cache, a:file)
-    " @TODO: load from ../../../node_modules/.bin/github-codeowners
-    let l:output = system("github-codeowners who " . a:file)
-    let s:cache[a:file] = get(split(l:output), 1, "Unloved") 
+    if !codeowners#isCodeownersFileExist()
+      let s:cache[a:file] = "Unloved"
+    else
+      let s:bin = globpath(&rtp, "node_modules/.bin/github-codeowners") 
+      let l:output = system(s:bin . " who " . a:file)
+      let s:cache[a:file] = get(split(l:output), 1, "Unloved") 
+    endif
   endif
 
   return s:cache[a:file]
