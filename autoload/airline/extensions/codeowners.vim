@@ -8,9 +8,5 @@ endif
 let g:loaded_vim_airline_codeowners = 1
 
 function! airline#extensions#codeowners#init(ext)
-  call airline#parts#define_raw('codeowners', '%{airline#extensions#codeowners#who()}')
-endfunction
-
-function! airline#extensions#codeowners#who()
-  return codeowners#who(bufname())
+  call airline#parts#define_raw('codeowners', '%{codeowners#whoBufname()}')
 endfunction

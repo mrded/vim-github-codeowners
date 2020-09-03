@@ -12,6 +12,10 @@ function! codeowners#isCodeownersFileExist()
   return filereadable(s:projectDir . '/.github/CODEOWNERS')
 endfunction
 
+function! codeowners#whoBufname()
+  return codeowners#who(bufname())
+endfunction
+
 function! codeowners#who(file)
   if !has_key(s:cache, a:file)
     if !codeowners#isCodeownersFileExist()
