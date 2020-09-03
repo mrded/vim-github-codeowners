@@ -25,7 +25,7 @@ Plug 'mrded/vim-github-codeowners', {'do': 'npm install'}
 
 ![vim airline codeowners screenshot](https://user-images.githubusercontent.com/347098/91915409-63262700-ecb2-11ea-8502-52f820e22c75.png)
 
-To show a codeowner in an [vim-airline](https://github.com/bling/vim-airline) section:
+To show a codeowner in an [Airline](https://github.com/bling/vim-airline) section:
 
 ```vim
 function! AirlineInit()
@@ -33,4 +33,19 @@ function! AirlineInit()
 endfunction
 
 autocmd User AirlineAfterInit call AirlineInit()
+```
+
+## Lightline Configuration
+
+To show a codeowner in a [Lightline](https://github.com/itchyny/lightline.vim) section:
+
+```vim
+let g:lightline = {
+      \   'active': {
+      \     'right': [['codeowners']]
+      \   },
+      \   'component_function': {
+      \     'codeowners': 'codeowners#whoBufname'
+      \   },
+      \ }
 ```
